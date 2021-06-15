@@ -1,37 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
-import { PhotoViewer } from './photoViewer/photoViewer';
-import ImageUrls from './photoViewer/imageSelector';
-import React, { useEffect, useState } from 'react';
-import { ImageGallery } from './photoViewer/imageGallery';
-import { BrowserRouter as Router, Switch, Route, Link, useParams } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { RenderPage } from './photoViewer/renderPage';
 
 
 function App() {
-	const [url, setURL] = useState(ImageUrls[0]);
+	// const [url, setURL] = useState(ImageUrls[0]);
 
-	useEffect(() => {
-		
-		window.history.replaceState(null, null, `http://localhost:3000/images/${url}`);
-	}, [url]);
-
-	const {id} = useParams()
+	// const { id } = useParams()
 
 	return (
 		<Router>
 			<Switch>
-				<Route path="/images/:id" >
-					<Function />
+				<Route exact path="/">
+					<RenderPage />
+				</Route>
+				<Route exact path="/images/:id" >
+					<RenderPage/>
+				</Route>
+				<Route path="/">
+					<div>
+						<h1>Error: 404</h1>
+					</div>
 				</Route>
 			</Switch>
-			<div className="App">
-				<h1>React Photo Viewer</h1>
-				<PhotoViewer src={url} />
-				<h2>-- Gallery --</h2>
-				<ImageGallery setURL={setURL} />
-			</div>
+
 		</Router>
 	);
 }
+
+// function Test() {
+// const pageUrl = window.location.href;
+// return <RenderPage pageUrl={pageUrl} />
+// }
+
+// setInterval(Test,1000);
 
 export default App;

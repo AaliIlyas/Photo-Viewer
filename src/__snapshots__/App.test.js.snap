@@ -4,9 +4,6 @@ exports[`Snapshot testing: site renders correctly 1`] = `
 <div
   className="App"
 >
-  <p>
-    Learn React
-  </p>
   <h1>
     React Photo Viewer
   </h1>

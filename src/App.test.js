@@ -4,10 +4,10 @@ import App from './App';
 import ImageUrls from './photoViewer/imageSelector';
 import renderer from 'react-test-renderer';
 
-test('renders learn react link', () => {
+test('renders the Gallery text', () => {
 	render(<App />);
-	const linkElement = screen.getByText(/learn react/i);
-	expect(linkElement).toBeInTheDocument();
+	const text = screen.getByText(/Gallery/i);
+	expect(text).toBeInTheDocument();
 });
 
 test('check 1st image url is correct', () => {

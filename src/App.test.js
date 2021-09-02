@@ -1,8 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { createRenderer } from 'react-dom/test-utils';
 import App from './App';
-import { Gallery } from './photoViewer/imageGallery';
 import ImageUrls from './photoViewer/imageSelector';
 import renderer from 'react-test-renderer';
 
@@ -27,7 +25,6 @@ describe("Snapshot testing:", () => {
 
 		expect(app).toMatchSnapshot();
 	});
-
 });
 
 

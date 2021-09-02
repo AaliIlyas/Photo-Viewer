@@ -11,7 +11,6 @@ function getImageUrls() {
             urls.push(`https://picsum.photos/id/6${imageNumberString}/1600/900.jpg`)
         }
     }
-
     return urls;
 }
 
